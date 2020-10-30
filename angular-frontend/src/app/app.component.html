@@ -1,0 +1,16 @@
+
+<div class="app-container">
+  <!-- Image and text -->
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    Angular Frontend
+  </a>
+  <span class="navbar-text" *ngIf="user">
+    <button (click)="logout()" class="btn btn-outline-success" type="button">Logout</button>
+  </span>
+</nav>
+
+  <div class="container mt-5">
+    <router-outlet></router-outlet>
+  </div>
+</div>
