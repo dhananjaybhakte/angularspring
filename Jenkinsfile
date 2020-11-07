@@ -3,16 +3,20 @@ pipeline {
   stages {
     stage('Build and Test Angular') {
       steps {
-        sh 'cd angular-frontend'
-        sh 'npm install'
-        sh 'ng test'
+        dir(path: 'angular-frontend') {
+          sh 'npm install'
+          sh 'ng test'
+        }
+
       }
     }
 
     stage('Build Spring') {
       steps {
-        sh 'cd spring-backend'
-        sh 'mvn clean test'
+        dir(path: 'spring-backend') {
+          sh 'mvn clean test'
+        }
+
       }
     }
 
