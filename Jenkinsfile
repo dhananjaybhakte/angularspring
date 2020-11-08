@@ -2,10 +2,24 @@ pipeline {
   agent any
   stages {
     stage('Build and Test Angular') {
-      steps {
-        dir(path: 'angular-frontend') {
-          sh 'npm install'
-          sh 'ng test'
+      parallel {
+        stage('Build and Test Angular') {
+          steps {
+            dir(path: 'angular-frontend') {
+              sh 'npm install'
+              sh 'ng test'
+            }
+
+          }
+        }
+
+        stage('Springs sonar') {
+          steps {
+            dir(path: ' spring-backend ') {
+              sh 'mvn sonar:sonar'
+            }
+
+          }
         }
 
       }
