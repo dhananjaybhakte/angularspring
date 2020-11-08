@@ -35,5 +35,14 @@ pipeline {
       }
     }
 
+    stage('Springs Sonar') {
+      steps {
+        dir(path: ' spring-backend ') {
+          sh 'mvn sonar:sonar'
+        }
+
+      }
+    }
+
   }
 }
