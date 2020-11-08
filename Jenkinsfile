@@ -11,7 +11,7 @@ pipeline {
       }
     }
 
-    stage('Build Spring') {
+    stage('Build and Test Spring') {
       steps {
         dir(path: 'spring-backend') {
           sh 'mvn clean test'
