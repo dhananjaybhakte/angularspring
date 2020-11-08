@@ -13,8 +13,17 @@ module.exports = function (config) {
       require("karma-coverage-istanbul-reporter"),
       require("karma-junit-reporter"),
       require("@angular-devkit/build-angular/plugins/karma"),
+      require("karma-sonarqube-unit-reporter"),
     ],
-    reporters: ["junit"],
+    sonarQubeUnitReporter: {
+      sonarQubeVersion: "LATEST",
+      outputFile: "reports/ut_report.xml",
+      overrideTestDescription: true,
+      testPaths: ["./src"],
+      testFilePattern: ".spec.ts",
+      useBrowserName: false,
+    },
+    reporters: ["junit","sonarqubeUnit"],
     junitReporter: {
       outputDir: "karma-results",
       outputFile: "karma-results.xml",
