@@ -12,9 +12,24 @@ pipeline {
     }
 
     stage('Build and Test Spring') {
-      steps {
-        dir(path: 'spring-backend') {
-          sh 'mvn clean test'
+      parallel {
+        stage('Build and Test Spring') {
+          steps {
+            dir(path: 'spring-backend') {
+              sh 'mvn clean test'
+            }
+
+          }
+        }
+
+        stage('Run Sonar ') {
+          steps {
+            dir(path: 'angular-frontend') {
+              sh 'ng test --code-coverage --watch=false'
+              sh 'npm run sonar'
+            }
+
+          }
         }
 
       }
