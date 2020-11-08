@@ -7,6 +7,11 @@ Spring Boot : 2.3.4.RELEASE
 This is a angular frontend + spring boot backend demo project developed for CI/CD purposes. 
 Test files also included for angular + spring project.
 
+This project can also run entire CI/CD from our Custom Docker Image.
+https://github.com/PDOP-Beta/Pipeline-Angular-SpringBoot
+
+Pull the above project and jenkinsfile is already set to run with the required setting.
+
 
 # Steps to Run
 ### Clone this repository. 
