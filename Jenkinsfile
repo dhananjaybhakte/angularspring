@@ -22,7 +22,7 @@ pipeline {
           }
         }
 
-        stage('Run Sonar ') {
+        stage('Run Sonar on Angular') {
           steps {
             dir(path: 'angular-frontend') {
               sh 'ng test --code-coverage --watch=false'
@@ -35,7 +35,7 @@ pipeline {
       }
     }
 
-    stage('Springs Sonar') {
+    stage('Run Sonar on springs') {
       steps {
         dir(path: 'spring-backend') {
           sh 'mvn sonar:sonar'
