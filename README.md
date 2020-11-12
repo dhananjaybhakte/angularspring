@@ -8,7 +8,7 @@ This is a angular frontend + spring boot backend demo project developed for CI/C
 Test files also included for angular + spring project.
 
 This project can also run entire CI/CD from our Custom Docker Image.
-https://github.com/PDOP-Beta/Pipeline-Angular-SpringBoot
+https://github.com/PDOP-Beta/Workflow-Jenkins-Angular-SpringBoot
 
 Pull the above project and jenkinsfile is already set to run with the required setting.
 
