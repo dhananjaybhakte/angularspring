@@ -43,6 +43,12 @@ Spring-Boot
 $ mvn spring-boot:run
 ```
 
+Credentials
+```sh
+username - admin
+password - password
+```
+
  
 ###  Run the Test Cases
 
