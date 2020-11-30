@@ -1,4 +1,3 @@
-TEST
 # Angular + Spring Stack
 
 ## Versions
