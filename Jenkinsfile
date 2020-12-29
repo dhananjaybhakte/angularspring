@@ -4,7 +4,7 @@ pipeline {
     stage('Build and Test Angular') {
       steps {
         dir(path: 'angular-frontend') {
-          sh 'npm start'
+          sh 'npm install'
           sh 'ng test'
         }
 
