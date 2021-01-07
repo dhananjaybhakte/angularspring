@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Dependency Scanner) {
-      steps { sh 'npm audit' }
-      }
+    stage('Dependency scaner') {
+          steps {
+            dir(path: 'angular-frontend') {
+              sh 'npm audit'
+              
+            }
+
+          }
+        }
     stage('Build and Test Angular') {
       steps {
         dir(path: 'angular-frontend') {
