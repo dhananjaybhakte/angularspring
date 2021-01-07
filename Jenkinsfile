@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Dependency Scanner) {
       steps { sh 'npm audit' }
+      }
     stage('Build and Test Angular') {
       steps {
         dir(path: 'angular-frontend') {
