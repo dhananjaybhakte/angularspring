@@ -1,6 +1,20 @@
 pipeline {
   agent any
   stages {
+    
+    stage('Build and Test Angular') {
+      steps {
+        dir(path: 'angular-frontend') {
+          sh 'npm install'
+          
+          
+          
+          
+        }
+
+      }
+    }
+    
     stage('Dependency scaner') {
           steps {
             dir(path: 'angular-frontend') {
@@ -10,18 +24,6 @@ pipeline {
 
           }
         }
-    stage('Build and Test Angular') {
-      steps {
-        dir(path: 'angular-frontend') {
-          sh 'npm install'
-          
-          sh 'ng test'
-          
-          
-        }
-
-      }
-    }
 
     stage('Build and Test Spring') {
       parallel {
