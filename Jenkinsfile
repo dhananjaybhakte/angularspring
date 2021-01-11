@@ -19,7 +19,7 @@ pipeline {
           steps {
             dir(path: 'angular-frontend') {
               
-              sh 'npm audit --json'
+              sh 'npm audit --parseable'
               
             }
 
