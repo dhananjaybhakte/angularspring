@@ -19,6 +19,7 @@ pipeline {
           steps {
             dir(path: 'angular-frontend') {
               sh 'npm audit'
+              sh 'npm audit fix'
               
             }
 
